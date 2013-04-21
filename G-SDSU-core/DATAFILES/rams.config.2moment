@@ -1,0 +1,29 @@
+6      ! irams_flags(1) = 1 (5 or 6) ! Small cloud, for 2-moment: 5=constant CCN, 6=CCN decr w/height, CPARM is the maximum
+5      ! irams_flags(2) = 1 (5)      ! Rain
+6      ! irams_flags(3) = 5 (6)      ! Pristine ice
+5      ! irams_flags(4) = 1 (5)      ! Snow
+5      ! irams_flags(5) = 1 (5)      ! Aggregates
+5      ! irams_flags(6) = 1 (5)      ! Graupel
+5      ! irams_flags(7) = 1 (5)      ! Hail
+6      ! irams_flags(8) = 1 (5 or 6) ! Large cloud, for 2-moment: 5=constant GCCN, 6=GCCN decr w/height, C2PARM is the maximum
+1      ! irams_flags(9) = 1          ! Riming flag, bulk (0) vs. bin (1) riming
+1      ! irams_flags(10) = 1         ! Power laws, old (0) vs. new (1) mass power laws
+0      ! iccnlev = 0                 ! Set iccnlev = 0 explicitly--current version of RAMS does not support > 0
+300.   ! if ( irams_flags(1) .lt. 5 ) then rams_parms(1) = .3e9, else rams_parms(1) = 300.0 (#/cm3) ! CPARM, Small cloud num conc. if ICLOUD>=5
+1.E-3  ! rams_parms(2) = 1.0E-3       ! RPARM, Rain characteristic diam (m)
+1.E5   ! rams_parms(3) = 1.0E5        ! PPARM, Pristine ice num conc.
+1.E-3  ! rams_parms(4) = 1.E-3        ! SPARM, Snow characteristic diam (m)
+1.E-3  ! rams_parms(5) = 1.E-3        ! APARM, Aggregates characteristic diam (m)
+1.E-3  ! rams_parms(6) = 1.E-3        ! GPARM, Graupel characteristic diam (m)
+3.E-3  ! rams_parms(7) = 3.E-3        ! HPARM, Hail characteristic diam (m)
+1.E-4  ! if ( irams_flags(8) .lt. 5 ) then rams_parms(8) = .1e6 else rams_parms(8) = 1.E-4 ! C2PARM, Large cloud num conc. (m) if  ICLOUD2>=5
+0.04E-4  ! rams_parms(9) = 0.04E-4      ! CNPARM, Median radius of CCN dist (cm)
+3.0E-4 ! rams_parms(10)= 3.0E-4       ! GNPARM, Median radius of GCCN dist (cm)
+2.0    ! rams_gnu(1) = 2.0   ! Small cloud  width parameter for the modified gamma distribution
+2.0    ! rams_gnu(2) = 2.0   ! Rain         width parameter for the modified gamma distribution
+2.0    ! rams_gnu(3) = 2.0   ! Pristine ice width parameter for the modified gamma distribution
+2.0    ! rams_gnu(4) = 2.0   ! Snow         width parameter for the modified gamma distribution
+2.0    ! rams_gnu(5) = 2.0   ! Aggregates   width parameter for the modified gamma distribution
+2.0    ! rams_gnu(6) = 2.0   ! Graupel      width parameter for the modified gamma distribution
+2.0    ! rams_gnu(7) = 2.0   ! Hail         width parameter for the modified gamma distribution
+2.0    ! rams_gnu(8) = 2.0   ! Large cloud  width parameter for the modified gamma distribution
